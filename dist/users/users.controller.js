@@ -33,11 +33,9 @@ let UsersController = class UsersController {
         return this.usersService.create(createUserDto);
     }
     findAll() {
-        console.log("He");
         return this.usersService.findAll();
     }
     findOne(email) {
-        console.log("oye");
         return this.usersService.findOne(email);
     }
     update(id, updateUserDto) {
@@ -48,7 +46,7 @@ let UsersController = class UsersController {
     }
 };
 __decorate([
-    (0, common_1.Post)("/token"),
+    (0, common_1.Post)("/login"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [login_user_dto_1.LoginUserDto]),

@@ -52,11 +52,9 @@ export class UsersService {
 
   async findOne(email: string) {
     try {
-      console.log("email : ", email);
       const user = await this.userRepository.findOne({
         where: { email: email },
       });
-      console.log("user : ", user);
       if (!user) {
         throw new NotFoundException("Not found");
       }

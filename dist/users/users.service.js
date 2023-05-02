@@ -52,11 +52,9 @@ let UsersService = class UsersService {
     }
     async findOne(email) {
         try {
-            console.log("email : ", email);
             const user = await this.userRepository.findOne({
                 where: { email: email },
             });
-            console.log("user : ", user);
             if (!user) {
                 throw new common_1.NotFoundException("Not found");
             }

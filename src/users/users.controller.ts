@@ -22,7 +22,7 @@ export class UsersController {
     private authService: AuthService
   ) {}
 
-  @Post("/token")
+  @Post("/login")
   login(@Body() loginUserDto: LoginUserDto) {
     console.log(loginUserDto.username, loginUserDto.password);
     return this.authService.signIn(
@@ -39,15 +39,12 @@ export class UsersController {
   @UseGuards(AuthGuard)
   @Get()
   findAll() {
-    console.log("He");
     return this.usersService.findAll();
   }
 
   @UseGuards(AuthGuard)
   @Get(":email")
   findOne(@Param("email") email: string) {
-    console.log("oye");
-
     return this.usersService.findOne(email);
   }
 
